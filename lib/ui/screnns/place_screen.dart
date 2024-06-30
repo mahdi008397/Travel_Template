@@ -2,6 +2,7 @@ import 'dart:ui';
 
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/rendering.dart';
 import 'package:flutter/widgets.dart';
 
 class PlaceScreen extends StatelessWidget {
@@ -9,7 +10,11 @@ class PlaceScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    double screenW = MediaQuery.of(context).size.width;
+    double screenH = MediaQuery.of(context).size.height;
+
     return Scaffold(
+      backgroundColor: const Color.fromRGBO(255, 255, 255, 1),
       body: Column(
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
@@ -158,6 +163,199 @@ class PlaceScreen extends StatelessWidget {
                 ),
               ),
             ],
+          ),
+          const SizedBox(
+            height: 40,
+          ),
+          const Padding(
+            padding: EdgeInsets.symmetric(horizontal: 30),
+            child: Row(
+              children: [
+                Text(
+                  'Overview',
+                  style: TextStyle(
+                    fontFamily: 'Inter',
+                    fontSize: 22,
+                    color: Color.fromRGBO(27, 27, 27, 1),
+                    fontWeight: FontWeight.bold,
+                  ),
+                ),
+                SizedBox(
+                  width: 40,
+                ),
+                Text(
+                  'Details',
+                  style: TextStyle(
+                    fontFamily: 'Inter',
+                    fontSize: 16,
+                    color: Color.fromRGBO(27, 27, 27, 0.62),
+                    fontWeight: FontWeight.w600,
+                  ),
+                ),
+              ],
+            ),
+          ),
+          const SizedBox(
+            height: 40,
+          ),
+          Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 30),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                Row(
+                  children: [
+                    Container(
+                      width: 34,
+                      height: 34,
+                      decoration: const BoxDecoration(
+                        color: Color.fromRGBO(237, 237, 237, 1),
+                        borderRadius: BorderRadius.all(Radius.circular(6)),
+                      ),
+                      child: const Icon(
+                        Icons.watch_later_rounded,
+                        color: Color.fromRGBO(63, 63, 63, 1),
+                      ),
+                    ),
+                    const Padding(
+                      padding: EdgeInsets.only(left: 10),
+                      child: Text(
+                        '9 hours',
+                        style: TextStyle(
+                          fontFamily: 'Roboto',
+                          fontSize: 18,
+                          fontWeight: FontWeight.w500,
+                          color: Color.fromRGBO(126, 126, 126, 1),
+                        ),
+                      ),
+                    ),
+                  ],
+                ),
+                Row(
+                  children: [
+                    Container(
+                      width: 34,
+                      height: 34,
+                      decoration: const BoxDecoration(
+                        color: Color.fromRGBO(237, 237, 237, 1),
+                        borderRadius: BorderRadius.all(Radius.circular(6)),
+                      ),
+                      child: const Icon(
+                        Icons.cloud,
+                        color: Color.fromRGBO(63, 63, 63, 1),
+                      ),
+                    ),
+                    const Padding(
+                      padding: EdgeInsets.only(left: 10),
+                      child: Text(
+                        '16 °C',
+                        style: TextStyle(
+                          fontFamily: 'Roboto',
+                          fontSize: 18,
+                          fontWeight: FontWeight.w500,
+                          color: Color.fromRGBO(126, 126, 126, 1),
+                        ),
+                      ),
+                    ),
+                  ],
+                ),
+                Row(
+                  children: [
+                    Container(
+                      width: 34,
+                      height: 34,
+                      decoration: const BoxDecoration(
+                        color: Color.fromRGBO(237, 237, 237, 1),
+                        borderRadius: BorderRadius.all(Radius.circular(6)),
+                      ),
+                      child: const Icon(
+                        Icons.star_rate_rounded,
+                        color: Color.fromRGBO(63, 63, 63, 1),
+                      ),
+                    ),
+                    const Padding(
+                      padding: EdgeInsets.only(left: 10),
+                      child: Text(
+                        '4.5',
+                        style: TextStyle(
+                          fontFamily: 'Roboto',
+                          fontSize: 18,
+                          fontWeight: FontWeight.w500,
+                          color: Color.fromRGBO(126, 126, 126, 1),
+                        ),
+                      ),
+                    ),
+                  ],
+                ),
+              ],
+            ),
+          ),
+          const SizedBox(
+            height: 40,
+          ),
+          Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 30),
+            child: Stack(
+              children: [
+                const Text(
+                  'This vast mountain range is renowned for its remarkable diversity in terms of topography and climate. It features towering peaks, active volcanoes, deep canyons, expansive plateaus, and lush valleys.',
+                  style: TextStyle(
+                    fontFamily: 'Roboto',
+                    fontSize: 18,
+                    fontWeight: FontWeight.w500,
+                    color: Color.fromRGBO(165, 165, 165, 1),
+                  ),
+                ),
+                Container(
+                  width: screenW,
+                  height: 130,
+                  decoration: const BoxDecoration(
+                    gradient: LinearGradient(
+                      colors: [
+                        Color.fromRGBO(255, 255, 255, 0),
+                        Color.fromRGBO(255, 255, 255, 1),
+                      ],
+                      begin: Alignment.topCenter,
+                      end: Alignment.bottomCenter,
+                    ),
+                  ),
+                ),
+              ],
+            ),
+          ),
+          const SizedBox(
+            height: 10,
+          ),
+          Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 30),
+            child: Container(
+              width: 373,
+              height: 66,
+              decoration: const BoxDecoration(
+                color: Color.fromRGBO(27, 27, 27, 1),
+                borderRadius: BorderRadius.all(Radius.circular(20)),
+              ),
+              child: Center(
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    const Text(
+                      "Book Now",
+                      style: TextStyle(
+                        fontFamily: 'Roboto',
+                        fontSize: 20,
+                        fontWeight: FontWeight.w500,
+                        color: Colors.white,
+                      ),
+                    ),
+                    const SizedBox(
+                      width: 20,
+                    ),
+                    Image.asset('assets/images/send-ico.png'),
+                  ],
+                ),
+              ),
+            ),
           ),
         ],
       ),
