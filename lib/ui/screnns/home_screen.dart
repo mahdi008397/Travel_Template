@@ -304,7 +304,7 @@ class HomeScreen extends StatelessWidget {
                                     const BorderRadius.all(Radius.circular(50)),
                                 child: BackdropFilter(
                                   filter:
-                                      ImageFilter.blur(sigmaY: 40, sigmaX: 40),
+                                      ImageFilter.blur(sigmaY: 15, sigmaX: 15),
                                   child: Container(
                                     width: 44,
                                     height: 44,
@@ -330,7 +330,7 @@ class HomeScreen extends StatelessWidget {
                             borderRadius:
                                 const BorderRadius.all(Radius.circular(15)),
                             child: BackdropFilter(
-                              filter: ImageFilter.blur(sigmaY: 40, sigmaX: 40),
+                              filter: ImageFilter.blur(sigmaY: 15, sigmaX: 15),
                               child: Container(
                                 width: 224,
                                 height: 75,
@@ -432,7 +432,7 @@ class HomeScreen extends StatelessWidget {
                                     const BorderRadius.all(Radius.circular(50)),
                                 child: BackdropFilter(
                                   filter:
-                                      ImageFilter.blur(sigmaY: 40, sigmaX: 40),
+                                      ImageFilter.blur(sigmaY: 15, sigmaX: 15),
                                   child: Container(
                                     width: 44,
                                     height: 44,
@@ -458,7 +458,7 @@ class HomeScreen extends StatelessWidget {
                             borderRadius:
                                 const BorderRadius.all(Radius.circular(15)),
                             child: BackdropFilter(
-                              filter: ImageFilter.blur(sigmaY: 40, sigmaX: 40),
+                              filter: ImageFilter.blur(sigmaY: 15, sigmaX: 15),
                               child: Container(
                                 width: 224,
                                 height: 75,
@@ -539,6 +539,19 @@ class HomeScreen extends StatelessWidget {
             ),
           )
         ],
+      ),
+      bottomNavigationBar: Padding(
+        padding: const EdgeInsets.symmetric(horizontal: 30),
+        child: NavigationBar(
+          backgroundColor: const Color.fromRGBO(255, 255, 255, 1),
+          elevation: 0,
+          destinations: [
+            Image.asset('assets/images/home-ico.png'),
+            Image.asset('assets/images/time-ico.png'),
+            Image.asset('assets/images/heart-ico.png'),
+            Image.asset('assets/images/profile.png'),
+          ],
+        ),
       ),
     );
   }
