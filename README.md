@@ -21,7 +21,7 @@ In Android Frame 📱
 Hero Animation 📹
 
 <video autoplay loop muted>
-  <source src="gif-1.mp4.mp4" type="video/mp4" />\
+  <source src="gif-1.mp4" type="video/mp4" />
 </video>
 
 ## Developers
