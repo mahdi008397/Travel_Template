@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:travel_template/ui/screnns/home_screen.dart';
 import 'package:travel_template/ui/screnns/place_screen.dart';
 
 void main() {
@@ -18,7 +19,7 @@ class MainApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return const MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: PlaceScreen(),
+      home: HomeScreen(),
     );
   }
 }

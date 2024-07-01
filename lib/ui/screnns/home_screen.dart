@@ -1,6 +1,9 @@
 import 'dart:ui';
 
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
+import 'package:travel_template/ui/screnns/place_screen.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
@@ -12,24 +15,32 @@ class HomeScreen extends StatelessWidget {
       body: Column(
         children: [
           const SizedBox(
-            height: 40,
+            height: 60,
           ),
           Padding(
             padding: const EdgeInsets.symmetric(horizontal: 30),
             child: Row(
               children: [
-                const Column(
+                Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    Text(
-                      "Hi, Mahdi 👋",
-                      style: TextStyle(
-                        fontFamily: 'Montserrat',
-                        color: Color.fromRGBO(47, 47, 47, 1),
-                        fontSize: 30,
+                    GestureDetector(
+                      onTap: () {
+                        Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => const PlaceScreen()));
+                      },
+                      child: const Text(
+                        "Hi, Mahdi 👋",
+                        style: TextStyle(
+                          fontFamily: 'Montserrat',
+                          color: Color.fromRGBO(47, 47, 47, 1),
+                          fontSize: 30,
+                        ),
                       ),
                     ),
-                    Text(
+                    const Text(
                       "Explore the world",
                       style: TextStyle(
                         fontFamily: 'Inter',
@@ -57,7 +68,7 @@ class HomeScreen extends StatelessWidget {
             ),
           ),
           const SizedBox(
-            height: 40,
+            height: 25,
           ),
           Padding(
             padding: const EdgeInsets.symmetric(horizontal: 30),
@@ -130,7 +141,7 @@ class HomeScreen extends StatelessWidget {
             ),
           ),
           const SizedBox(
-            height: 40,
+            height: 25,
           ),
           const Padding(
             padding: EdgeInsets.symmetric(horizontal: 30),
@@ -159,7 +170,7 @@ class HomeScreen extends StatelessWidget {
             ),
           ),
           const SizedBox(
-            height: 40,
+            height: 25,
           ),
           SingleChildScrollView(
             scrollDirection: Axis.horizontal,
@@ -409,129 +420,142 @@ class HomeScreen extends StatelessWidget {
                   const SizedBox(
                     width: 30,
                   ),
-                  Container(
-                    width: 270,
-                    height: 405,
-                    decoration: const BoxDecoration(
-                      color: Color.fromRGBO(217, 217, 217, 1),
-                      image: DecorationImage(
-                          image: AssetImage('assets/images/img-2.png'),
-                          fit: BoxFit.cover),
-                      borderRadius: BorderRadius.all(Radius.circular(30)),
-                    ),
-                    child: Column(
-                      children: [
-                        Row(
-                          mainAxisAlignment: MainAxisAlignment.end,
+                  GestureDetector(
+                    onTap: () {
+                      Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => const PlaceScreen()));
+                    },
+                    child: Hero(
+                      tag: 'assets/images/img-2.png',
+                      child: Container(
+                        width: 270,
+                        height: 405,
+                        decoration: const BoxDecoration(
+                          color: Color.fromRGBO(217, 217, 217, 1),
+                          image: DecorationImage(
+                              image: AssetImage('assets/images/img-2.png'),
+                              fit: BoxFit.cover),
+                          borderRadius: BorderRadius.all(Radius.circular(30)),
+                        ),
+                        child: Column(
                           children: [
+                            Row(
+                              mainAxisAlignment: MainAxisAlignment.end,
+                              children: [
+                                Padding(
+                                  padding:
+                                      const EdgeInsets.only(right: 10, top: 10),
+                                  child: ClipRRect(
+                                    borderRadius: const BorderRadius.all(
+                                        Radius.circular(50)),
+                                    child: BackdropFilter(
+                                      filter: ImageFilter.blur(
+                                          sigmaY: 15, sigmaX: 15),
+                                      child: Container(
+                                        width: 44,
+                                        height: 44,
+                                        decoration: const BoxDecoration(
+                                          color:
+                                              Color.fromRGBO(29, 29, 29, 0.4),
+                                          borderRadius: BorderRadius.all(
+                                              Radius.circular(50)),
+                                        ),
+                                        child: Center(
+                                          child: Image.asset(
+                                              'assets/images/like-ico.png'),
+                                        ),
+                                      ),
+                                    ),
+                                  ),
+                                )
+                              ],
+                            ),
+                            const Spacer(),
                             Padding(
-                              padding:
-                                  const EdgeInsets.only(right: 10, top: 10),
+                              padding: const EdgeInsets.only(bottom: 25),
                               child: ClipRRect(
                                 borderRadius:
-                                    const BorderRadius.all(Radius.circular(50)),
+                                    const BorderRadius.all(Radius.circular(15)),
                                 child: BackdropFilter(
                                   filter:
                                       ImageFilter.blur(sigmaY: 15, sigmaX: 15),
                                   child: Container(
-                                    width: 44,
-                                    height: 44,
+                                    width: 224,
+                                    height: 75,
                                     decoration: const BoxDecoration(
                                       color: Color.fromRGBO(29, 29, 29, 0.4),
                                       borderRadius:
-                                          BorderRadius.all(Radius.circular(50)),
+                                          BorderRadius.all(Radius.circular(15)),
                                     ),
                                     child: Center(
-                                      child: Image.asset(
-                                          'assets/images/like-ico.png'),
-                                    ),
-                                  ),
-                                ),
-                              ),
-                            )
-                          ],
-                        ),
-                        const Spacer(),
-                        Padding(
-                          padding: const EdgeInsets.only(bottom: 25),
-                          child: ClipRRect(
-                            borderRadius:
-                                const BorderRadius.all(Radius.circular(15)),
-                            child: BackdropFilter(
-                              filter: ImageFilter.blur(sigmaY: 15, sigmaX: 15),
-                              child: Container(
-                                width: 224,
-                                height: 75,
-                                decoration: const BoxDecoration(
-                                  color: Color.fromRGBO(29, 29, 29, 0.4),
-                                  borderRadius:
-                                      BorderRadius.all(Radius.circular(15)),
-                                ),
-                                child: Center(
-                                  child: Padding(
-                                    padding: const EdgeInsets.all(10.0),
-                                    child: Column(
-                                      children: [
-                                        const Row(
+                                      child: Padding(
+                                        padding: const EdgeInsets.all(10.0),
+                                        child: Column(
                                           children: [
-                                            Text(
-                                              'Andes,',
-                                              style: TextStyle(
-                                                fontFamily: 'Roboto',
-                                                color: Colors.white,
-                                                fontWeight: FontWeight.w500,
-                                                fontSize: 18,
-                                              ),
+                                            const Row(
+                                              children: [
+                                                Text(
+                                                  'Andes,',
+                                                  style: TextStyle(
+                                                    fontFamily: 'Roboto',
+                                                    color: Colors.white,
+                                                    fontWeight: FontWeight.w500,
+                                                    fontSize: 18,
+                                                  ),
+                                                ),
+                                                Text(
+                                                  ' South',
+                                                  style: TextStyle(
+                                                    fontFamily: 'Roboto',
+                                                    color: Color.fromRGBO(
+                                                        202, 200, 200, 1),
+                                                    fontWeight: FontWeight.w500,
+                                                    fontSize: 16,
+                                                  ),
+                                                ),
+                                              ],
                                             ),
-                                            Text(
-                                              ' South',
-                                              style: TextStyle(
-                                                fontFamily: 'Roboto',
-                                                color: Color.fromRGBO(
-                                                    202, 200, 200, 1),
-                                                fontWeight: FontWeight.w500,
-                                                fontSize: 16,
-                                              ),
+                                            Row(
+                                              children: [
+                                                Image.asset(
+                                                    'assets/images/point-ico.png'),
+                                                const Text(
+                                                  '  South, America',
+                                                  style: TextStyle(
+                                                      fontFamily: 'Roboto',
+                                                      fontSize: 14,
+                                                      color: Color.fromRGBO(
+                                                          202, 200, 200, 1)),
+                                                ),
+                                                const Spacer(),
+                                                const Icon(
+                                                  Icons.star_border_rounded,
+                                                  color: Color.fromRGBO(
+                                                      202, 200, 200, 1),
+                                                ),
+                                                const Text(
+                                                  '4.5',
+                                                  style: TextStyle(
+                                                      fontFamily: 'Roboto',
+                                                      fontSize: 14,
+                                                      color: Color.fromRGBO(
+                                                          202, 200, 200, 1)),
+                                                ),
+                                              ],
                                             ),
                                           ],
                                         ),
-                                        Row(
-                                          children: [
-                                            Image.asset(
-                                                'assets/images/point-ico.png'),
-                                            const Text(
-                                              '  South, America',
-                                              style: TextStyle(
-                                                  fontFamily: 'Roboto',
-                                                  fontSize: 14,
-                                                  color: Color.fromRGBO(
-                                                      202, 200, 200, 1)),
-                                            ),
-                                            const Spacer(),
-                                            const Icon(
-                                              Icons.star_border_rounded,
-                                              color: Color.fromRGBO(
-                                                  202, 200, 200, 1),
-                                            ),
-                                            const Text(
-                                              '4.5',
-                                              style: TextStyle(
-                                                  fontFamily: 'Roboto',
-                                                  fontSize: 14,
-                                                  color: Color.fromRGBO(
-                                                      202, 200, 200, 1)),
-                                            ),
-                                          ],
-                                        ),
-                                      ],
+                                      ),
                                     ),
                                   ),
                                 ),
                               ),
                             ),
-                          ),
+                          ],
                         ),
-                      ],
+                      ),
                     ),
                   ),
                 ],

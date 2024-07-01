@@ -2,7 +2,6 @@ import 'dart:ui';
 
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/rendering.dart';
 import 'package:flutter/widgets.dart';
 
 class PlaceScreen extends StatelessWidget {
@@ -11,7 +10,7 @@ class PlaceScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     double screenW = MediaQuery.of(context).size.width;
-    double screenH = MediaQuery.of(context).size.height;
+    // double screenH = MediaQuery.of(context).size.height;
 
     return Scaffold(
       backgroundColor: const Color.fromRGBO(255, 255, 255, 1),
@@ -19,153 +18,163 @@ class PlaceScreen extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
           const SizedBox(
-            height: 30,
+            height: 60,
           ),
           Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              Container(
-                width: 374,
-                height: 460,
-                decoration: const BoxDecoration(
-                  image: DecorationImage(
-                      image: AssetImage('assets/images/img-2.png'),
-                      fit: BoxFit.cover),
-                  borderRadius: BorderRadius.all(Radius.circular(25.5)),
-                ),
-                child: Column(
-                  children: [
-                    Padding(
-                      padding:
-                          const EdgeInsets.only(top: 20, right: 20, left: 20),
-                      child: Row(
-                        children: [
-                          ClipRRect(
-                            borderRadius:
-                                const BorderRadius.all(Radius.circular(50)),
-                            child: BackdropFilter(
-                              filter: ImageFilter.blur(sigmaX: 15, sigmaY: 15),
-                              child: Container(
-                                width: 44,
-                                height: 44,
-                                decoration: const BoxDecoration(
-                                  color: Color.fromRGBO(29, 29, 29, 0.4),
-                                  borderRadius:
-                                      BorderRadius.all(Radius.circular(50)),
+              Hero(
+                tag: 'assets/images/img-2.png',
+                child: Container(
+                  width: screenW * 0.87,
+                  height: 460,
+                  decoration: const BoxDecoration(
+                    image: DecorationImage(
+                        image: AssetImage('assets/images/img-2.png'),
+                        fit: BoxFit.cover),
+                    borderRadius: BorderRadius.all(Radius.circular(25.5)),
+                  ),
+                  child: Column(
+                    children: [
+                      Padding(
+                        padding:
+                            const EdgeInsets.only(top: 20, right: 20, left: 20),
+                        child: Row(
+                          children: [
+                            GestureDetector(
+                              onTap: () {
+                                Navigator.pop(context);
+                              },
+                              child: ClipRRect(
+                                borderRadius:
+                                    const BorderRadius.all(Radius.circular(50)),
+                                child: BackdropFilter(
+                                  filter:
+                                      ImageFilter.blur(sigmaX: 15, sigmaY: 15),
+                                  child: Container(
+                                    width: 44,
+                                    height: 44,
+                                    decoration: const BoxDecoration(
+                                      color: Color.fromRGBO(29, 29, 29, 0.4),
+                                      borderRadius:
+                                          BorderRadius.all(Radius.circular(50)),
+                                    ),
+                                    child: Image.asset(
+                                        'assets/images/back-ico.png'),
+                                  ),
                                 ),
-                                child:
-                                    Image.asset('assets/images/back-ico.png'),
                               ),
                             ),
-                          ),
-                          const Spacer(),
-                          ClipRRect(
-                            borderRadius:
-                                const BorderRadius.all(Radius.circular(50)),
-                            child: BackdropFilter(
-                              filter: ImageFilter.blur(sigmaX: 15, sigmaY: 15),
-                              child: Container(
-                                width: 44,
-                                height: 44,
-                                decoration: const BoxDecoration(
-                                  color: Color.fromRGBO(29, 29, 29, 0.4),
-                                  borderRadius:
-                                      BorderRadius.all(Radius.circular(50)),
-                                ),
-                                child:
-                                    Image.asset('assets/images/save-ico.png'),
-                              ),
-                            ),
-                          ),
-                        ],
-                      ),
-                    ),
-                    const Spacer(),
-                    Padding(
-                      padding: const EdgeInsets.only(bottom: 20),
-                      child: ClipRRect(
-                        borderRadius:
-                            const BorderRadius.all(Radius.circular(15)),
-                        child: BackdropFilter(
-                          filter: ImageFilter.blur(sigmaY: 15, sigmaX: 15),
-                          child: Container(
-                            width: 331,
-                            height: 104,
-                            decoration: const BoxDecoration(
-                              color: Color.fromRGBO(29, 29, 29, 0.3),
+                            const Spacer(),
+                            ClipRRect(
                               borderRadius:
-                                  BorderRadius.all(Radius.circular(15)),
+                                  const BorderRadius.all(Radius.circular(50)),
+                              child: BackdropFilter(
+                                filter:
+                                    ImageFilter.blur(sigmaX: 15, sigmaY: 15),
+                                child: Container(
+                                  width: 44,
+                                  height: 44,
+                                  decoration: const BoxDecoration(
+                                    color: Color.fromRGBO(29, 29, 29, 0.4),
+                                    borderRadius:
+                                        BorderRadius.all(Radius.circular(50)),
+                                  ),
+                                  child:
+                                      Image.asset('assets/images/save-ico.png'),
+                                ),
+                              ),
                             ),
-                            child: Padding(
-                              padding:
-                                  const EdgeInsets.symmetric(horizontal: 20),
-                              child: Column(
-                                mainAxisAlignment: MainAxisAlignment.center,
-                                children: [
-                                  const Row(
-                                    children: [
-                                      Text(
-                                        'Andes Mountain',
-                                        style: TextStyle(
-                                          fontFamily: 'Inter',
-                                          fontSize: 24,
-                                          fontWeight: FontWeight.bold,
-                                          color: Colors.white,
+                          ],
+                        ),
+                      ),
+                      const Spacer(),
+                      Padding(
+                        padding: const EdgeInsets.only(bottom: 20),
+                        child: ClipRRect(
+                          borderRadius:
+                              const BorderRadius.all(Radius.circular(15)),
+                          child: BackdropFilter(
+                            filter: ImageFilter.blur(sigmaY: 15, sigmaX: 15),
+                            child: Container(
+                              width: screenW * 0.77,
+                              height: 104,
+                              decoration: const BoxDecoration(
+                                color: Color.fromRGBO(29, 29, 29, 0.3),
+                                borderRadius:
+                                    BorderRadius.all(Radius.circular(15)),
+                              ),
+                              child: Padding(
+                                padding:
+                                    const EdgeInsets.symmetric(horizontal: 20),
+                                child: Column(
+                                  mainAxisAlignment: MainAxisAlignment.center,
+                                  children: [
+                                    const Row(
+                                      children: [
+                                        Text(
+                                          'Andes Mountain',
+                                          style: TextStyle(
+                                            fontFamily: 'Inter',
+                                            fontSize: 24,
+                                            fontWeight: FontWeight.bold,
+                                            color: Colors.white,
+                                          ),
                                         ),
-                                      ),
-                                      Spacer(),
-                                      Text(
-                                        'Price',
-                                        style: TextStyle(
-                                          fontFamily: 'Roboto',
-                                          fontSize: 16,
-                                          fontWeight: FontWeight.w400,
-                                          color:
-                                              Color.fromRGBO(202, 200, 200, 1),
+                                        Spacer(),
+                                        Text(
+                                          'Price',
+                                          style: TextStyle(
+                                            fontFamily: 'Roboto',
+                                            fontSize: 16,
+                                            fontWeight: FontWeight.w400,
+                                            color: Color.fromRGBO(
+                                                202, 200, 200, 1),
+                                          ),
                                         ),
-                                      ),
-                                    ],
-                                  ),
-                                  Row(
-                                    children: [
-                                      Image.asset(
-                                          'assets/images/point-ico.png'),
-                                      const Text(
-                                        'South, America',
-                                        style: TextStyle(
-                                          fontFamily: 'Roboto',
-                                          fontSize: 18,
-                                          fontWeight: FontWeight.w400,
-                                          color:
-                                              Color.fromRGBO(202, 200, 200, 1),
+                                      ],
+                                    ),
+                                    Row(
+                                      children: [
+                                        Image.asset(
+                                            'assets/images/point-ico.png'),
+                                        const Text(
+                                          'South, America',
+                                          style: TextStyle(
+                                            fontFamily: 'Roboto',
+                                            fontSize: 18,
+                                            fontWeight: FontWeight.w400,
+                                            color: Color.fromRGBO(
+                                                202, 200, 200, 1),
+                                          ),
                                         ),
-                                      ),
-                                      const Spacer(),
-                                      const Text(
-                                        "＄230",
-                                        style: TextStyle(
-                                          fontFamily: 'Roboto',
-                                          fontWeight: FontWeight.w400,
-                                          fontSize: 25,
-                                          color: Colors.white,
-                                        ),
-                                      )
-                                    ],
-                                  ),
-                                ],
+                                        const Spacer(),
+                                        const Text(
+                                          "＄230",
+                                          style: TextStyle(
+                                            fontFamily: 'Roboto',
+                                            fontWeight: FontWeight.w400,
+                                            fontSize: 25,
+                                            color: Colors.white,
+                                          ),
+                                        )
+                                      ],
+                                    ),
+                                  ],
+                                ),
                               ),
                             ),
                           ),
                         ),
                       ),
-                    ),
-                  ],
+                    ],
+                  ),
                 ),
               ),
             ],
           ),
           const SizedBox(
-            height: 40,
+            height: 20,
           ),
           const Padding(
             padding: EdgeInsets.symmetric(horizontal: 30),
@@ -196,7 +205,7 @@ class PlaceScreen extends StatelessWidget {
             ),
           ),
           const SizedBox(
-            height: 40,
+            height: 20,
           ),
           Padding(
             padding: const EdgeInsets.symmetric(horizontal: 30),
@@ -291,7 +300,7 @@ class PlaceScreen extends StatelessWidget {
             ),
           ),
           const SizedBox(
-            height: 40,
+            height: 20,
           ),
           Padding(
             padding: const EdgeInsets.symmetric(horizontal: 30),
@@ -308,7 +317,7 @@ class PlaceScreen extends StatelessWidget {
                 ),
                 Container(
                   width: screenW,
-                  height: 130,
+                  height: 165,
                   decoration: const BoxDecoration(
                     gradient: LinearGradient(
                       colors: [
