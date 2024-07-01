@@ -16,12 +16,6 @@ In Android Frame 📱
   <img src="screenshot-3.jpg"  />
 </p>
 
-## Gif
-
-Hero Animation 📹
-
-<video src='gif-1.mp4'/>
-
 ## Developers
 
 Support me on Instagram. ❤️
