@@ -7,13 +7,9 @@ Simple Travel Application Template 🏄
 In Android Frame 📱
 
 <p float="left">
-  <img src="screenshot-1.jpg"  />
-</p>
-<p float="left">
-  <img src="screenshot-2.jpg"  />
-</p>
-<p float="left">
-  <img src="screenshot-3.jpg"  />
+  <img src="screenshot-1.jpg" width="250px"/>
+  <img src="screenshot-2.jpg" width="250px"/>
+  <img src="screenshot-3.jpg" width="250px"/>
 </p>
 
 ## Developers
